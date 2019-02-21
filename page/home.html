@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>矩阵</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/home.css">
+    </head>
+
+    <body>
+
+        <div id="content">
+            <ul id = 'top_nav'>
+                        <li ><a class="item"><img id='home_icon' src="img/menu.png"></a></li>
+                        <li ><a class="item" id="li_def">定义</a></li>
+                        <li ><a class="item">历史</a></li>
+                        <li ><a class="item">关于</a></li>
+            </ul>
+            <div id="home">
+                
+                <div id="define_1" class="define">
+                    <p class="define_title">描述</p>
+
+                    <p class="define_des">在数学中，矩阵(Matrix)是一个按照长方阵列排列的复数或实数集合，最早来自于方程组的系数及常数所构成的方阵。这一概念由19世纪英国数学家凯利首先提出。</p>
+                </div>
+
+                <div id="define_2" class="define">
+                        <p class="define_title">定义</p>
+    
+                        <p class="define_des">由 m × n 个数a<sub>ij</sub>排成的m行n列的数表称为m行n列的矩阵，简称m × n矩阵。记作：</p>
+
+                        <img class = 'define_img' src="img/matrix1.png">
+                        
+                        <p class="define_des" id="define_3">由 m × n 个数a<sub>ij</sub>这m×n 个数称为矩阵A的元素，简称为元，数a<sub>ij</sub>位于矩阵A的第i行第j列，称为矩阵A的(i,j)元，以数 a<sub>ij</sub>为(i,j)元的矩阵可记为(a<sub>ij</sub>)或(a<sub>ij</sub>)<sub>m×n</sub>，m×n矩阵A也记作A<sub>mn</sub>。</p>
+                </div>
+
+                <div id="define_4" class="define">
+                        
+                    <p class="define_des">元素是实数的矩阵称为实矩阵，元素是复数的矩阵称为复矩阵。而行数与列数都等于n的矩阵称为n阶矩阵或n阶方阵。</p>
+                </div>
+
+                <div id="define_5" class="define">
+                        <p class="define_title">应用</p>
+    
+                        <p class="define_des">矩阵是高等代数学中的常见工具，也常见于统计分析等应用数学学科中。 在物理学中，矩阵于电路学、力学、光学和量子物理中都有应用；计算机科学中，三维动画制作也需要用到矩阵。 矩阵的运算是数值分析领域的重要问题。将矩阵分解为简单矩阵的组合可以在理论和实际应用上简化矩阵的运算。对一些应用广泛而形式特殊的矩阵，例如稀疏矩阵和准对角矩阵，有特定的快速运算算法。关于矩阵相关理论的发展和应用，请参考矩阵理论。在天体物理、量子力学等领域，也会出现无穷维的矩阵，是矩阵的一种推广。</p>
+                </div>
+
+            </div>    
+        </div>
+
+        <div id="panel"> 
+            <div id="header">
+                <img id = 'header_icon' src="img/icon.png">
+                <p id ="header_title">矩阵运算</p>
+            </div>
+
+            <div id="panel_content">
+                <ul id="panel_ul"> 
+                    <li><p class="panel_li_p">加&nbsp、&nbsp减</p></li>
+                    <li><p class="panel_li_p">乘&nbsp&nbsp法</p></li>
+                    <li><p class="panel_li_p">数&nbsp&nbsp乘</p></li>
+                    <li><p class="panel_li_p">行&nbsp&nbsp列&nbsp&nbsp式</p></li>
+                    <li><p class="panel_li_p">特&nbsp&nbsp征&nbsp&nbsp值</p></li>
+                    <li><p class="panel_li_p">秩</p></li>
+                    <li><p class="panel_li_p">逆</p></li>
+                    <li><p class="panel_li_p">LU&nbsp&nbsp分&nbsp&nbsp解</p></li>
+                    <li><p class="panel_li_p">QR&nbsp&nbsp分&nbsp&nbsp解</p></li>
+                    <li><p class="panel_li_p">奇&nbsp&nbsp异&nbsp&nbsp值&nbsp&nbsp分&nbsp&nbsp解</p></li>
+                </ul>
+
+            </div>
+        </div>
+        
+
+    </body>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <script>
+       
+        $(document).ready(function(){
+            var isOpen = false;
+            $("#home").height($(window).height()-$('#top_nav').height()-16);
+
+            $('#home_icon').click(function(){
+                if(!isOpen){
+                    $('#panel').show();
+                    $('#panel').animate({width:$(document).width()*0.75+''});
+                    isOpen = true;
+                }
+
+            });
+
+            $('#home').click(function(){
+                if(isOpen){
+                    $('#panel').animate({width:'0px'},function(){
+                        $('#panel').hide();
+                    });
+
+                    isOpen = false;
+                }
+                
+            });
+
+        });
+       
+    </script>
+</html>
