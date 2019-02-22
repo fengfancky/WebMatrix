@@ -44,11 +44,76 @@ body{
 }
 
 #home{
+     position:absolute;
      background: white;
      width: 100%;
      overflow-y: auto;
    
 }
+
+#history{
+    position:absolute;
+    background: white;
+    width: 100%;
+    overflow-y: auto;
+    display: none;
+   
+}
+
+#about{
+    position:absolute;
+    background: white;
+    width: 100%;
+    display: none;
+  
+}
+
+#about_info{
+    padding: 1em;
+}
+
+.history_item{
+    display: flex;
+    font-size: 16px;
+    line-height: 4em;
+    overflow: hidden;
+}
+
+.history_year{
+    padding: 0.5em;
+    margin-left: 0.5em;
+    width: 5em;
+}
+
+.line{
+    position: relative;
+    width: 1px;
+    background: #11ADFF;
+}
+
+.point{
+    position:absolute;
+    font-size: 16px;
+    width: 1.2em;
+    height: 1.2em;
+    left: -0.6em;
+    top: 1em;
+    border-radius: 1.5em;
+    background-color: #11ADFF;
+
+} 
+
+.history_des{
+    padding: 0.5em;
+    margin: 1em;
+    border: 1px solid gray;
+    border-radius: 0.5em;
+    box-shadow: 0 0 1em gray;
+    line-height: 2em;
+    flex: 1;
+
+}
+
 
 .define{
     font-size: 16px;
@@ -67,8 +132,6 @@ body{
 .define_des{
     font-size: 16px;
     line-height: 1em;
-    /* margin-top: 0.5em;
-    margin-bottom: 0.5em; */
 }
 
 .define_img{
@@ -83,7 +146,6 @@ body{
     position: absolute;
     display: none;
 	text-align:center;
-    border:solid 1px #c3c3c3;
     width: 0;
     height: 100%;
 }

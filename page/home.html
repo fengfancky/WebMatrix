@@ -14,9 +14,11 @@
             <ul id = 'top_nav'>
                         <li ><a class="item"><img id='home_icon' src="img/menu.png"></a></li>
                         <li ><a class="item" id="li_def">定义</a></li>
-                        <li ><a class="item">历史</a></li>
-                        <li ><a class="item">关于</a></li>
+                        <li ><a class="item" id="li_history">历史</a></li>
+                        <li ><a class="item" id="li_about">关于</a></li>
             </ul>
+
+
             <div id="home">
                 
                 <div id="define_1" class="define">
@@ -46,7 +48,30 @@
                         <p class="define_des">矩阵是高等代数学中的常见工具，也常见于统计分析等应用数学学科中。 在物理学中，矩阵于电路学、力学、光学和量子物理中都有应用；计算机科学中，三维动画制作也需要用到矩阵。 矩阵的运算是数值分析领域的重要问题。将矩阵分解为简单矩阵的组合可以在理论和实际应用上简化矩阵的运算。对一些应用广泛而形式特殊的矩阵，例如稀疏矩阵和准对角矩阵，有特定的快速运算算法。关于矩阵相关理论的发展和应用，请参考矩阵理论。在天体物理、量子力学等领域，也会出现无穷维的矩阵，是矩阵的一种推广。</p>
                 </div>
 
-            </div>    
+            </div>  
+
+            <div id="history">
+
+                    <!-- <div class = 'history_item'>
+                        <p class = 'history_year' >史前年代</p>
+                        <div class="line">
+                            <span class="point"></span>
+                        </div>
+                        <p class = 'history_des'>矩阵的研究历史悠久，拉丁方阵和幻方在史前年代已有人研究。</p>
+                    </div> -->
+                    
+            </div>
+    
+                <div id="about">
+                    <p id = 'about_info'>
+                        开发者：fengfancky
+                        项目开源地址：https://github.com/fengfancky/WebMatrix.git
+                    </p>
+                </div>
+                
+
+            
+            
         </div>
 
         <div id="panel"> 
@@ -68,10 +93,8 @@
                     <li><p class="panel_li_p">QR&nbsp&nbsp分&nbsp&nbsp解</p></li>
                     <li><p class="panel_li_p">奇&nbsp&nbsp异&nbsp&nbsp值&nbsp&nbsp分&nbsp&nbsp解</p></li>
                 </ul>
-
             </div>
         </div>
-        
 
     </body>
     <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
@@ -79,7 +102,46 @@
        
         $(document).ready(function(){
             var isOpen = false;
+            var isLoad = false;
+
+            var time = ["史前年代","东汉前期","1683年","1750年","1800年代","1844年","1850年","1858年","1878年","1879年","1884年","1906年","1922年","1925年","1935年","1993年"];
+            var des = ["矩阵的研究历史悠久，拉丁方阵和幻方在史前年代已有人研究。",
+        "成书最迟在东汉前期的《九章算术》中，用分离系数法表示线性方程组，得到了其增广矩阵。在消元过程中，使用的把某行乘以某一非零实数、从某行中减去另一行等运算技巧，相当于矩阵的初等变换。但那时并没有现今理解的矩阵概念，虽然它与现有的矩阵形式上相同，但在当时只是作为线性方程组的标准表示与处理方式。",
+        "日本数学家关孝和（1683年）与微积分的发现者之一戈特弗里德·威廉·莱布尼茨（1693年）近乎同时地独立建立了行列式论。其后行列式作为解线性方程组的工具逐步发展。",
+        "加布里尔·克拉默发现了克莱姆法则。",
+        "矩阵的现代概念在19世纪逐渐形成。1800年代，高斯和威廉·若尔当建立了高斯—若尔当消去法。",
+        "1844年，德国数学家费迪南·艾森斯坦（F.Eisenstein）讨论了“变换”（矩阵）及其乘积。",
+        "英国数学家詹姆斯·约瑟夫·西尔维斯特（James Joseph Sylvester）首先使用矩阵一词。",
+        "英国数学家阿瑟·凯利发表了《矩阵论的研究报告》等一系列关于矩阵的专门论文，研究了矩阵的运算律、矩阵的逆以及转置和特征多项式方程。凯利还提出了凯莱-哈密尔顿定理，并验证了3×3矩阵的情况，又说进一步的证明是不必要的。",
+        "1854年时法国数学家埃尔米特（C.Hermite）使用了“正交矩阵”这一术语，但他的正式定义直到1878年才由费罗贝尼乌斯发表。",
+        "费罗贝尼乌斯引入矩阵秩的概念。至此，矩阵的体系基本上建立起来了。",
+        "庞加莱在两篇不严谨地使用了无限维矩阵和行列式理论的文章后开始了对无限维矩阵的专门研究。",
+        "希尔伯特引入无限二次型（相当于无限维矩阵）对积分方程进行研究，极大地促进了无限维矩阵的研究。在此基础上，施密茨、赫林格和特普利茨发展出算子理论，而无限维矩阵成为了研究函数空间算子的有力工具。",
+        "程廷熙在一篇介绍文章中将矩阵译为“纵横阵”。",
+        "科学名词审查会算学名词审查组在《科学》第十卷第四期刊登的审定名词表中，矩阵被翻译为“矩阵式”，方块矩阵翻译为“方阵式”，而各类矩阵如“正交矩阵”、“伴随矩阵”中的“矩阵”则被翻译为“方阵”。",
+        "中国数学会审查后，中华民国教育部审定的《数学名词》（并“通令全国各院校一律遵用，以昭划一”）中，“矩阵”作为译名首次出现。",
+        "中国自然科学名词审定委员会公布的《数学名词》中，“矩阵”被定为正式译名，并沿用至今。"];
+
+        var data = "";
+
+        if(!isLoad){
+    
+            for(var i=0;i<time.length;i++){
+                data +="<div class = 'history_item'>"
+                    +"<p class = 'history_year' >"+time[i]+"</p>"
+                    +"<div class='line'><span class='point'></span></div>"
+                    +"<p class = 'history_des'>"+des[i]+"</p>"
+                    +"</div>";
+            }
+
+            $('#history').html(data);
+            isLoad = true;
+
+        }
+
             $("#home").height($(window).height()-$('#top_nav').height());
+            $("#history").height($(window).height()-$('#top_nav').height());
+            $("#about").height($(window).height()-$('#top_nav').height());
 
             $('#home_icon').click(function(){
                 if(!isOpen){
@@ -90,7 +152,9 @@
 
             });
 
-            $('#home').click(function(){
+
+            $('#content > div').click(function(){
+              
                 if(isOpen){
                     $('#panel').animate({width:'0px'},function(){
                         $('#panel').hide();
@@ -98,7 +162,18 @@
 
                     isOpen = false;
                 }
-                
+            });
+
+
+            $('#top_nav li').click(function(){
+                var ind =  $(this).index();
+                if(ind == 0){
+                    return;
+                }
+
+                $('#content > div').eq(ind-1).fadeIn();
+                $('#content > div').eq(ind-1).siblings("div").fadeOut();
+
             });
 
         });
